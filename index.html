@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPilot - Planejamento de Viagens Inteligente</title>
+    <meta name="description" content="Planeje viagens personalizadas com inteligência artificial.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="EcoPilot" style="height: 40px;">
+                <span class="logo-text">EcoPilot</span>
+            </a>
+            <nav class="nav" id="main-nav">
+                <a href="como-funciona.html">Como Funciona</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="login.html" class="btn btn-secondary">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1 class="hero-title">Viaje o Mundo,<br>Descubra Experiências.</h1>
+                <p class="hero-subtitle">Roteiros personalizados com IA que priorizam suas preferências e
+                    interesses. Planejamento inteligente, sem esforço.</p>
+                <a href="#planner" class="btn btn-primary">Planejar Minha Viagem</a>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <section id="planner" class="planner-section">
+            <div class="container">
+                <div class="planner-card">
+                    <h2>Crie seu Roteiro Personalizado</h2>
+                    <form id="trip-form" class="trip-form">
+                        <div class="form-group" style="position: relative;">
+                            <label for="destination">Destino</label>
+                            <input type="text" id="destination" placeholder="Ex: Costa Rica, Bonito..." required
+                                autocomplete="off">
+                            <ul id="suggestions-list" class="suggestions-list hidden"></ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="dates">Datas</label>
+                            <input type="date" id="dates" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="theme">Tema de Interesse</label>
+                            <select id="theme" required>
+                                <option value="" disabled selected>Selecione um tema</option>
+                                <option value="nature">Natureza & Aventura</option>
+                                <option value="culture">Cultura & História</option>
+                                <option value="gastronomy">Gastronomia Local</option>
+                                <option value="relaxation">Relaxamento & Bem-estar</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Gerar Roteiros com IA</span>
+                            <span class="loader hidden"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Desbloqueie Viagens Ilimitadas</h2>
+                <p class="pricing-subtitle">Assine agora e crie roteiros personalizados sem limites</p>
+
+                <div class="pricing-card">
+                    <div class="pricing-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-plan-name">Plano Premium</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">R$</span>
+                            <span class="price">19,90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p class="pricing-description">Acesso completo a todos os recursos</p>
+                    </div>
+
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Roteiros ilimitados com IA</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Sugestões personalizadas de hospedagem</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Mapas interativos detalhados</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Recomendações de restaurantes locais</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Salve e exporte seus roteiros</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span class="feature-text">Suporte prioritário</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-full pricing-cta">
+                        Assinar Agora
+                    </button>
+
+                    <p class="pricing-guarantee">Cancele quando quiser • Sem compromisso</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="results-section hidden">
+            <div class="container">
+                <h2 class="section-title">Seus Roteiros Sugeridos</h2>
+                <div id="map" style="height: 400px; width: 100%; border-radius: 16px; margin-bottom: 2rem; z-index: 1;">
+                </div>
+                <div id="itineraries-grid" class="itineraries-grid">
+                    <!-- Itineraries will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EcoPilot. Viaje com inteligência.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = auth.getCurrentUser();
+            const nav = document.getElementById('main-nav');
+
+            if (user) {
+                // Remove Login button
+                const loginBtn = nav.querySelector('.btn-secondary');
+                if (loginBtn) loginBtn.remove();
+
+                // Create User Dropdown Container
+                const userDropdown = document.createElement('div');
+                userDropdown.className = 'user-dropdown';
+
+                // Create User Button
+                const userButton = document.createElement('button');
+                userButton.className = 'user-button';
+                userButton.innerHTML = `
+                    <span class="user-avatar">${user.name.charAt(0).toUpperCase()}</span>
+                    <span class="user-name">Olá, ${user.name.split(' ')[0]}</span>
+                    <span class="dropdown-arrow">▼</span>
+                `;
+
+                // Create Dropdown Menu
+                const dropdownMenu = document.createElement('div');
+                dropdownMenu.className = 'dropdown-menu';
+                dropdownMenu.innerHTML = `
+                    <div class="dropdown-header">
+                        <div class="dropdown-user-info">
+                            <strong>${user.name}</strong>
+                            <small>${user.email}</small>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a href="perfil.html" class="dropdown-item">
+                        <span class="dropdown-icon">👤</span>
+                        Meu Perfil
+                    </a>
+                    ${user.isPremium ? `
+                        <a href="#pricing" class="dropdown-item premium-item">
+                            <span class="dropdown-icon">⭐</span>
+                            Assinatura Premium
+                        </a>
+                        <a href="#pricing" class="dropdown-item">
+                            <span class="dropdown-icon">📋</span>
+                            Ver Plano
+                        </a>
+                    ` : `
+                        <a href="#pricing" class="dropdown-item">
+                            <span class="dropdown-icon">💎</span>
+                            Assinar Premium
+                        </a>
+                    `}
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item logout-item" onclick="auth.logout()">
+                        <span class="dropdown-icon">🚪</span>
+                        Sair
+                    </button>
+                `;
+
+                // Toggle dropdown on click
+                userButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('show');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('show');
+                });
+
+                userDropdown.appendChild(userButton);
+                userDropdown.appendChild(dropdownMenu);
+                nav.appendChild(userDropdown);
+            }
+        });
+
+        // Pricing CTA functionality
+        const pricingCTA = document.querySelector('.pricing-cta');
+        if (pricingCTA) {
+            pricingCTA.addEventListener('click', () => {
+                const user = auth.getCurrentUser();
+                if (user) {
+                    // Check if user already has premium
+                    if (user.isPremium) {
+                        alert('Você já é um assinante Premium! 🎉\n\nAproveite todos os recursos ilimitados.');
+                        return;
+                    }
+
+                    // User is logged in, activate subscription
+                    if (confirm('Deseja assinar o Plano Premium por R$ 19,90/mês e desbloquear roteiros ilimitados?')) {
+                        const result = auth.subscribe(user.email);
+
+                        if (result.success) {
+                            alert('🎉 Parabéns! Sua assinatura Premium foi ativada!\n\nAgora você pode criar roteiros ilimitados com IA.\n\nVamos começar?');
+                            // Reload page to update UI
+                            window.location.reload();
+                        } else {
+                            alert('Erro: ' + result.message);
+                        }
+                    }
+                } else {
+                    // User is not logged in, redirect to registration
+                    alert('Para assinar o Plano Premium, você precisa criar uma conta primeiro.');
+                    window.location.href = 'cadastro.html';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

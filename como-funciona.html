@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Funciona - EcoPilot</title>
+    <meta name="description"
+        content="Entenda como a EcoPilot utiliza inteligência artificial para planejar viagens personalizadas.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        .page-hero {
+            padding: 4rem 0;
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .steps-section {
+            padding: 4rem 0;
+        }
+
+        .step-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            background-color: var(--color-emerald);
+            color: var(--color-white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tech-explanation {
+            background-color: #ECFDF5;
+            /* Emerald 50 */
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            text-align: center;
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .step-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="EcoPilot Logo" style="height: 40px;">
+                <span class="logo-text">EcoTrip<span class="highlight">AI</span></span>
+            </a>
+            <nav class="nav">
+                <a href="como-funciona.html" class="highlight">Como Funciona</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="login.html" class="btn btn-secondary">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="hero-title" style="font-size: 2.5rem;">Como a Mágica Acontece</h1>
+                <p class="hero-subtitle">Tecnologia e inteligência unidas para criar a viagem perfeita.</p>
+            </div>
+        </section>
+
+        <section class="steps-section">
+            <div class="container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Você define o sonho</h3>
+                        <p>Conte para nós onde quer ir, quando e qual o estilo da sua viagem (Aventura, Relaxamento,
+                            Cultura, etc). Nossa interface simples coleta suas preferências iniciais.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Nossa IA analisa suas preferências</h3>
+                        <p>O algoritmo da EcoPilot cruza milhares de dados: melhores rotas, hotéis
+                            com ótimas avaliações e atividades que combinam com seu perfil. Criamos roteiros
+                            personalizados para cada viajante.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Você escolhe e viaja tranquilo</h3>
+                        <p>Apresentamos 3 roteiros completos. Você vê claramente os detalhes de cada opção.
+                            Selecione o seu favorito e receba todas as informações para reservar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-explanation">
+            <div class="container">
+                <h2 class="section-title">Nossos Pilares</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <span class="tech-icon">🤖</span>
+                        <h3>Inteligência Artificial</h3>
+                        <p>Otimização de rotas para maximizar experiências e minimizar deslocamentos desnecessários.</p>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-icon">⭐</span>
+                        <h3>Curadoria Premium</h3>
+                        <p>Banco de dados exclusivo de parceiros selecionados com excelência em serviços.</p>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-icon">⚖️</span>
+                        <h3>Transparência Total</h3>
+                        <p>Informações claras e detalhadas sobre cada aspecto da sua viagem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="text-align: center; padding: 4rem 0;">
+            <a href="index.html#planner" class="btn btn-primary">Começar a Planejar Agora</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EcoPilot. Viaje com inteligência.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

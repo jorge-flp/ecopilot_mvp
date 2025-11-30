@@ -1,0 +1,22 @@
+{
+    "nature": {
+        "titles": ["Ecoturismo na Mata Atlântica", "Expedição Amazônia Selvagem", "Paraíso no Cerrado"],
+        "activities": ["Trilha das Cachoeiras", "Observação de Araras Azuis", "Banho de Rio Cristalino"],
+        "accommodations": ["Pousada Recanto das Águas", "Eco-Lodge Toca do Tatu", "Refúgio da Serra"]
+    },
+    "culture": {
+        "titles": ["Imersão no Pelourinho", "Rota do Ouro Colonial", "Tradições do Sertão"],
+        "activities": ["Oficina de Capoeira", "Visita a Quilombos", "Degustação de Cachaça Artesanal"],
+        "accommodations": ["Pousada Casarão Histórico", "Hostel Cultural Raízes", "Hotel Boutique Colonial"]
+    },
+    "gastronomy": {
+        "titles": ["Sabores do Norte", "Rota do Vinho Gaúcho", "Delícias Mineiras"],
+        "activities": ["Aula de Culinária Regional", "Colheita de Café Especial", "Jantar em Fazenda Histórica"],
+        "accommodations": ["Pousada do Vinhedo", "Hotel Fazenda Café", "Estalagem Gastronômica"]
+    },
+    "relaxation": {
+        "titles": ["Detox em Alto Paraíso", "Retiro na Chapada", "Spa Natural em Bonito"],
+        "activities": ["Yoga ao Amanhecer", "Massagem com Pedras Quentes", "Banho de Argila Natural"],
+        "accommodations": ["Resort Zen Chapada", "Bangalôs do Rio", "Santuário Ecológico Spa"]
+    }
+}

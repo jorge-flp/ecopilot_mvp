@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Hospedagem - EcoPilot</title>
+    <meta name="description" content="Detalhes da sua hospedagem selecionada.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .details-hero {
+            height: 60vh;
+            position: relative;
+            background-color: var(--color-gray-100);
+            overflow: hidden;
+        }
+
+        .details-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .details-container {
+            max-width: 1000px;
+            margin: -4rem auto 4rem;
+            position: relative;
+            z-index: 10;
+            padding: 0 1rem;
+        }
+
+        .details-card {
+            background: var(--color-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .details-title h1 {
+            font-size: 2.5rem;
+            color: var(--color-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .details-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #F59E0B;
+            background: #FFFBEB;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-gray-500);
+        }
+
+        .amenity-icon {
+            color: var(--color-emerald);
+            font-size: 1.25rem;
+        }
+
+        .map-placeholder {
+            background-color: #E5E7EB;
+            height: 300px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-500);
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="EcoPilot Logo" style="height: 40px;">
+                <span class="logo-text">EcoTrip<span class="highlight">AI</span></span>
+            </a>
+            <nav class="nav">
+                <a href="como-funciona.html">Como Funciona</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="login.html" class="btn btn-secondary">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="details-hero">
+            <img id="hotel-image" src="" alt="Hotel Image">
+        </section>
+
+        <div class="details-container">
+            <div class="details-card">
+                <div class="details-header">
+                    <div class="details-title">
+                        <h1 id="hotel-name">Carregando...</h1>
+                        <p id="hotel-location" style="color: var(--color-gray-500); font-size: 1.1rem;">Localização</p>
+                    </div>
+                    <div class="details-rating">
+                        <span>⭐</span> <span id="hotel-rating">5.0</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="color: var(--color-navy); margin-bottom: 1rem;">Sobre a Hospedagem</h2>
+                    <p style="color: var(--text-main); line-height: 1.8;">
+                        Esta acomodação foi selecionada cuidadosamente por nossa IA por sua
+                        excelência em serviço e localização privilegiada.
+                        Desfrute de uma estadia luxuosa com todo conforto, apoiando a economia local e
+                        aproveitando o melhor da região.
+                    </p>
+                </div>
+
+                <h2 style="color: var(--color-navy); margin-bottom: 1rem;">Comodidades</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <span class="amenity-icon">✨</span> Wi-Fi de Alta Velocidade
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">💧</span> Piscina
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🥗</span> Restaurante Orgânico
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🛎️</span> Serviço de Quarto 24h
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🧼</span> Spa e Bem-estar
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🚲</span> Aluguel de Bicicletas
+                    </div>
+                </div>
+
+                <div class="map-placeholder">
+                    Mapa da Localização (Simulado)
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <button class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.1rem;"
+                        onclick="alert('Reserva realizada com sucesso!')">Reservar Agora</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EcoPilot. Viaje com inteligência.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const image = urlParams.get('image');
+        const rating = urlParams.get('rating');
+        const locationName = urlParams.get('location');
+
+        // Update DOM
+        if (name) document.getElementById('hotel-name').textContent = name;
+        if (image) document.getElementById('hotel-image').src = image;
+        if (rating) document.getElementById('hotel-rating').textContent = rating;
+        if (locationName) document.getElementById('hotel-location').textContent = locationName;
+    </script>
+</body>
+
+</html>

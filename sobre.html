@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - EcoPilot</title>
+    <meta name="description" content="Conheça a missão e a equipe por trás da EcoPilot.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .about-hero {
+            padding: 6rem 0;
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .mission-section {
+            padding: 4rem 0;
+            background-color: var(--color-white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background-color: var(--color-gray-100);
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+            background-color: #ECFDF5;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--color-white);
+            border-radius: var(--radius-sm);
+            color: var(--color-navy);
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn:hover {
+            color: var(--color-emerald);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="EcoPilot Logo" style="height: 40px;">
+                <span class="logo-text">EcoTrip<span class="highlight">AI</span></span>
+            </a>
+            <nav class="nav">
+                <a href="como-funciona.html">Como Funciona</a>
+                <a href="sobre.html" class="highlight">Sobre</a>
+                <a href="login.html" class="btn btn-secondary">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="hero-title" style="font-size: 3rem;">Nossa Missão</h1>
+                <p class="hero-subtitle">Transformar o planejamento de viagens com tecnologia inteligente.</p>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <h2 class="section-title">Por que existimos?</h2>
+                <p
+                    style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--color-gray-500);">
+                    A EcoPilot nasceu da crença de que planejar viagens deve ser simples e inteligente. Unimos
+                    tecnologia de ponta
+                    com curadoria especializada para empoderar viajantes a fazerem as melhores escolhas, sem
+                    abrir mão do conforto ou da aventura.
+                </p>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-icon">🎯</span>
+                        <h3>Personalização</h3>
+                        <p>Roteiros sob medida que atendem suas preferências únicas.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🔍</span>
+                        <h3>Qualidade</h3>
+                        <p>Seleção criteriosa de destinos e experiências autênticas.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🤝</span>
+                        <h3>Facilidade</h3>
+                        <p>Planejamento simplificado para você viajar sem complicação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Fale Conosco</h2>
+                <p>Estamos construindo o futuro das viagens. Junte-se a nós.</p>
+
+                <div class="social-links">
+                    <a href="https://instagram.com/ecotripai" target="_blank" class="social-btn">
+                        <span>📸</span> Instagram
+                    </a>
+                    <a href="mailto:contato@ecotripai.com" class="social-btn">
+                        <span>✉️</span> Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EcoPilot. Viaje com inteligência.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
